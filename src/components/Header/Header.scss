@@ -1,0 +1,31 @@
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #FFF;
+}
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 30px 0;
+
+    &-email {
+        h4 {
+            display: flex;
+            column-gap: 16px;
+            font-weight: 400;
+            span {
+                font-size: 20px;
+            }
+        }
+    }
+    &-links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 35px;
+    }
+}

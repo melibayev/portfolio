@@ -1,13 +1,28 @@
-body {
+@import url(https://db.onlinewebfonts.com/c/3114dbb517b7c67b80e322545c5f565f?family=Averta+Demo+PE+Regular);
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Averta Demo PE Regular";
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, *::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
 }
