@@ -2,6 +2,7 @@ import { Fragment, useEffect, useRef } from "react"
 import CountUp from 'react-countup';
 import Slider from "react-slick";
 import { TypeAnimation } from "react-type-animation";
+import { Slide } from 'react-awesome-reveal';
 import CustomTimeline from "../../components/shared/CustomTimeLine";
 
 // icons and images
@@ -43,7 +44,6 @@ const HomeP = () => {
                         <p>
                         <TypeAnimation
                             sequence={[
-                                // Same substring at the start will only be typed once, initially
                                 'Hi! I’m Elbek',
                                 1000,
                                 'I’m Frontend Developer',
@@ -54,12 +54,14 @@ const HomeP = () => {
                             />
                             </p>
                     </div>
+                    <Slide direction="up" triggerOnce>
                     <h2>Developer for Websites and Apps</h2>
                     <p>Specializing in UI design, responsive web design, and visual development. Passionate about delivering excellence in frontend development.</p>
                     <div className={styles['about-btns']}>
                         <button><NavLink to={'https://t.me/notjustdev'} target={"_blank"}>Hire Me</NavLink></button>
                         <button><a href={require('../../assets/cv/CV.pdf')} download='My CV'>Download CV <span><GoDownload /></span></a></button>
                     </div>
+                    </Slide>
                 </div>
             </div>
         </section>
@@ -70,6 +72,7 @@ const HomeP = () => {
             <div className="container">
                 <div className={styles.services}>
                     <div className={styles['services-info']}>
+                        <Slide direction="left" triggerOnce delay={400}>
                         <div className={styles['services-info-item']}>
                             <div className={styles['services-info-item-logo']}>
                                 <IoCodeSlashOutline />
@@ -79,6 +82,8 @@ const HomeP = () => {
                                 <span>Transforming design concepts into interactive and functional websites using the latest frontend technologies.</span>
                             </div>
                         </div>
+                        </Slide>
+                        <Slide direction="left" triggerOnce delay={500}>
                         <div className={styles['services-info-item']}>
                             <div className={styles['services-info-item-logo']}>
                                 <LiaLaptopCodeSolid />
@@ -88,6 +93,8 @@ const HomeP = () => {
                                 <span>Utilizing popular frontend frameworks such as React.js and Vue.js to create dynamic and efficient single-page applications</span>
                             </div>
                         </div>
+                        </Slide>
+                        <Slide direction="left" triggerOnce delay={600}>
                         <div className={styles['services-info-item']}>
                             <div className={styles['services-info-item-logo']}>
                                 <TbDeviceMobileCode />
@@ -97,10 +104,16 @@ const HomeP = () => {
                                 <span>Crafting websites that look and function flawlessly across various devices and screen sizes</span>
                             </div>
                         </div>
+                        </Slide>
                     </div>
                     <div className={styles['services-main']}>
+                        <Slide direction="right" triggerOnce delay={400}>
                         <h2>My Services</h2>
-                        <p>As a frontend developer, I offer a range of services aimed at creating visually appealing, user-friendly, and responsive web experiences.</p>
+                        </Slide>
+                        <Slide direction="right" triggerOnce delay={500}>
+                            <p>As a frontend developer, I offer a range of services aimed at creating visually appealing, user-friendly, and responsive web experiences.</p>
+                        </Slide>
+                        <Slide direction="right" triggerOnce delay={600}>
                         <div className={styles['services-main-stats']}>
                             <div>
                                 <CountUp end={6} duration={3} delay={2}/>+
@@ -111,6 +124,7 @@ const HomeP = () => {
                                 <p>Project complete</p>
                             </div>
                         </div>
+                        </Slide>
                     </div>
                 </div>
             </div>
@@ -120,7 +134,10 @@ const HomeP = () => {
         {/* EXPERICENCE SECTION (start) */}
         <section ref={experienceRef}>
             <div className="container">
+                <Slide direction="up" triggerOnce>
                 <div className={styles['experience-title']}>My Experience</div>
+                </Slide>
+                <Slide direction="up" triggerOnce>
                 <div className={styles.experience}>
                     <div className={styles['experience-time']}>
                         <div>
@@ -140,6 +157,7 @@ const HomeP = () => {
                         <CustomTimeline />
                     </div>
                 </div>
+                </Slide>
             </div>
         </section>
         {/* EXPERICENCE SECTION (end) */}
@@ -147,13 +165,18 @@ const HomeP = () => {
         {/* PORTFOLIO SECTION (start) */}
         <section ref={portfolioRef}>
             <div className="container">
+                <Slide direction="up" triggerOnce>
                 <div className={styles['portfolio-title']}>
                     Portfolio
                 </div>
+                </Slide>
+                <Slide direction="up" triggerOnce>
                 <div className={styles['portfolio-subtitle']}>
                     <h2>Let's have a look at my portfolio</h2>
                     <span><NavLink to={'/projects'}>See All</NavLink></span>
                 </div>
+                </Slide>
+                <Slide direction="up" triggerOnce>
                 <div className={styles.portfolio}>
                     <Slider {...settings}>
                         {projects.map(card => (
@@ -161,6 +184,7 @@ const HomeP = () => {
                         ))}
                     </Slider>
                 </div>
+                </Slide>
             </div>
         </section>
         {/* PORTFOLIO SECTION (end) */}

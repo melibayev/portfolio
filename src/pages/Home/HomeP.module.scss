@@ -25,11 +25,11 @@
         font-size: 42px;
         font-weight: 400;
     }
-    & > p {
+    p {
         font-size: 18px;
         color: #5F5F5F;
     }
-    h2, & > p {
+    h2, p {
         max-width: 400px;
     }
     &-btns {
@@ -66,13 +66,13 @@
     }
     @media (max-width: 568px) {
         row-gap: 24px;
-        h2, & > p {
+        h2, p {
             max-width: 320px;
         }
         h2 {
             font-size: 32px;
         }
-        & > p {
+        p {
             font-size: 16px;
         }
         &-btns {
@@ -156,7 +156,7 @@
             font-weight: 400;
             margin-bottom: 24px;
         }
-        & > p {
+        p {
             font-size: 18px;
             margin-bottom: 60px;
             color: #5F5F5F;
@@ -183,7 +183,7 @@
                 font-size: 32px;
                 margin-bottom: 16px;
             }
-            & > p {
+            p {
                 font-size: 16px;
                 margin-bottom: 40px;
             }
