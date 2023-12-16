@@ -38,22 +38,48 @@
         button {
             padding: 15px 37px;
             border-radius: 30px;
-            font-size: 18px;
-            color: #FFF;
             background-color: #000;
             transition: .5s;
+            a {
+                font-size: 18px;
+                color: #FFF;
+            }
         }
         button:last-child {
-            display: flex;
-            column-gap: 14px;
-            color: #000;
-            background-color: transparent;
-            span {
-                font-size: 20px;
+            a {
+                display: flex;
+                align-items: center;
+                column-gap: 14px;
+                color: #000;
+                span {
+                    font-size: 20px;
+                }
             }
+            background-color: transparent;
             &:hover {
-                color: #FFF;
+                a {
+                    color: #FFF;
+                }
                 background-color: #000;
+            }
+        }
+    }
+    @media (max-width: 568px) {
+        row-gap: 24px;
+        h2, & > p {
+            max-width: 320px;
+        }
+        h2 {
+            font-size: 32px;
+        }
+        & > p {
+            font-size: 16px;
+        }
+        &-btns {
+            column-gap: 8px;
+            button {
+                padding: 12px 24px;
+                font-size: 16px;
             }
         }
     }
@@ -63,15 +89,26 @@
 // SERVICES SECTION (start)
 #services {
     padding-top: 120px;
+    @media (max-width: 568px) {
+        padding-top: 100px;
+    }
 }
 .services {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
+    column-gap: 50px;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
     &-info {
         display: flex;
         flex-direction: column;
         row-gap: 40px;
+        @media (max-width: 768px) {
+            align-items: center;
+        }
         &-item {
             display: flex;
             align-items: center;
@@ -92,6 +129,23 @@
                 span {
                     font-size: 16px;
                     color: #5F5F5F;
+                }
+            }
+            @media (max-width: 568px) {
+                align-items: flex-start;
+                &-logo  {
+                    padding: 14px;
+                }
+                &-description {
+                    max-width: 100%;
+                    p {
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin-bottom: 4px;
+                    }
+                    span {
+                        font-size: 14px;
+                    }
                 }
             }
         }
@@ -117,17 +171,57 @@
                 font-size: 18px;
             }
         }
+        @media (max-width: 768px) {
+            grid-row: 1;
+            text-align: center;
+            &-stats {
+                justify-content: center;
+            }
+        }
+        @media (max-width: 568px) {
+            h2 {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+            & > p {
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+            &-stats {
+                font-size: 24px;
+                column-gap: 24px;
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
     }
 }
 // SERVICES SECTION (end)
+
 // EXPERIENCE SECTION (start)
 #experience {
     padding-top: 120px;
+    @media (max-width: 568px) {
+        padding-top: 100px;
+    }
 }
 
 .experience {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr 1.2fr;
+        column-gap: 14px;
+    }
+    &-title {
+        font-size: 42px;
+        margin-bottom: 42px;
+        text-align: center;
+        @media (max-width: 568px) {
+            font-size: 32px;
+        }
+    }
     &-time {
         display: flex;
         flex-direction: column;
@@ -141,7 +235,114 @@
             font-size: 16px;
             color: #5F5F5F;
         }
+        @media (max-width: 568px) {
+            row-gap: 230px;
+            p {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+            span {
+                display: block;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .timeline {
+        height: 220px !important;
+        &-header {
+            font-size: 20px;
+            margin-bottom: 8px !important;
+        }
+        &-description{
+            font-size: 16px !important;
+        }
+    }
+}
+@media (max-width: 568px) {
+    .timeline {
+        height: 300px !important;
+        &-header {
+            font-size: 16px;
+            margin-bottom: 8px !important;
+        }
+        &-description{
+            font-size: 14px !important;
+            font-weight: 500;
+        }
     }
 }
 
 // EXPERIENCE SECTION (end)
+
+// PORTFOLIO SECTION (start)
+#portfolio {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    @media (max-width: 568px) {
+        padding-top: 0px;
+    }
+}
+
+.portfolio {
+    position: relative;
+    &-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    &-subtitle {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        h2 {
+            font-size: 42px;
+            max-width: 433px;
+            font-weight: 400;
+        }
+        span {
+            font-size: 18px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+    @media (max-width: 568px) {
+        &-subtitle {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            h2 {
+                font-size: 24px;
+            }
+            span {
+                display: block;
+                text-align: end;
+            }
+        }
+    }
+}
+
+.prev-arrow, .next-arrow {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 50%;
+    color: #FFF;
+    background-color: #0C0C0C;
+    cursor: pointer;
+    filter: drop-shadow(0px 63px 150px rgba(0, 0, 0, 0.20));
+    z-index: 10;
+}
+
+.next-arrow {
+    right: 25px;
+}
+
+.prev-arrow {
+    left: 25px;
+}
+// PORTFOLIO SECTION (end)

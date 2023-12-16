@@ -1,5 +1,6 @@
-import { Fragment } from "react"
+import { Fragment, useEffect, useRef } from "react"
 import CountUp from 'react-countup';
+import Slider from "react-slick";
 import { TypeAnimation } from "react-type-animation";
 import CustomTimeline from "../../components/shared/CustomTimeLine";
 
@@ -12,13 +13,29 @@ import AVATAR_IMG from '../../assets/avatar.jpg'
 
 
 import styles from './HomeP.module.scss'
-
+import { settings } from "../../components/shared/CustomCarouselSettings";
+import { projects } from '../../components/data/index'
+import Card from "../../components/Card";
+import { NavLink } from "react-router-dom";
 
 const HomeP = () => {
+  const aboutRef = useRef(null);
+  const servicesRef = useRef(null);
+  const experienceRef = useRef(null);
+  const portfolioRef = useRef(null);
+  const contactRef = useRef(null);
+
+  useEffect(() => {
+    if (aboutRef.current) aboutRef.current.id = styles.about;
+    if (servicesRef.current) servicesRef.current.id = styles.services;
+    if (experienceRef.current) experienceRef.current.id = styles.experience;
+    if (portfolioRef.current) portfolioRef.current.id = styles.portfolio;
+    if (contactRef.current) contactRef.current.id = styles.contact;
+  }, []);
   return (
     <Fragment>
         {/* ABOUT SECTION (start) */}
-        <section id={styles.about}>
+        <section ref={aboutRef}>
             <div className="container">
                 <div className={styles.about}>
                     <div className={styles['about-img']}>
@@ -40,8 +57,8 @@ const HomeP = () => {
                     <h2>Developer for Websites and Apps</h2>
                     <p>Specializing in UI design, responsive web design, and visual development. Passionate about delivering excellence in frontend development.</p>
                     <div className={styles['about-btns']}>
-                        <button>Hire Me</button>
-                        <button>Download CV <span><GoDownload /></span></button>
+                        <button><NavLink to={'https://t.me/notjustdev'} target={"_blank"}>Hire Me</NavLink></button>
+                        <button><a href={require('../../assets/cv/CV.pdf')} download='My CV'>Download CV <span><GoDownload /></span></a></button>
                     </div>
                 </div>
             </div>
@@ -49,7 +66,7 @@ const HomeP = () => {
         {/* ABOUT SECTION (end) */}
 
         {/* SERVICES SECTION (start) */}
-        <section id={styles.services}>
+        <section ref={servicesRef}>
             <div className="container">
                 <div className={styles.services}>
                     <div className={styles['services-info']}>
@@ -101,9 +118,9 @@ const HomeP = () => {
         {/* SERVICES SECTION (end) */}
 
         {/* EXPERICENCE SECTION (start) */}
-        <section id={styles.experience}>
+        <section ref={experienceRef}>
             <div className="container">
-                <div className={styles['experience-title']}></div>
+                <div className={styles['experience-title']}>My Experience</div>
                 <div className={styles.experience}>
                     <div className={styles['experience-time']}>
                         <div>
@@ -126,6 +143,27 @@ const HomeP = () => {
             </div>
         </section>
         {/* EXPERICENCE SECTION (end) */}
+
+        {/* PORTFOLIO SECTION (start) */}
+        <section ref={portfolioRef}>
+            <div className="container">
+                <div className={styles['portfolio-title']}>
+                    Portfolio
+                </div>
+                <div className={styles['portfolio-subtitle']}>
+                    <h2>Let's have a look at my portfolio</h2>
+                    <span><NavLink to={'/projects'}>See All</NavLink></span>
+                </div>
+                <div className={styles.portfolio}>
+                    <Slider {...settings}>
+                        {projects.map(card => (
+                            <Card {...card} key={card.id} />
+                        ))}
+                    </Slider>
+                </div>
+            </div>
+        </section>
+        {/* PORTFOLIO SECTION (end) */}
     </Fragment>
   )
 }

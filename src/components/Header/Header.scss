@@ -11,12 +11,14 @@ nav {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: 30px 0;
-
     &-email {
         h4 {
             display: flex;
             column-gap: 16px;
             font-weight: 400;
+            a {
+                color: #000;
+            }
             span {
                 font-size: 20px;
             }
@@ -27,5 +29,14 @@ nav {
         justify-content: flex-end;
         align-items: center;
         column-gap: 35px;
+        li {
+            cursor: pointer;
+            a {
+                color: #000;
+            }
+        }
+        @media (max-width: 728px) {
+            display: none;
+        }
     }
 }

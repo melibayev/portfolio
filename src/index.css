@@ -5,6 +5,7 @@
   margin: 0;
   font-family: "Averta Demo PE Regular";
   font-style: normal;
+  scroll-behavior: smooth;
 }
 
 *, *::after,
@@ -25,4 +26,9 @@ button {
 
 ul {
   list-style-type: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
 }
