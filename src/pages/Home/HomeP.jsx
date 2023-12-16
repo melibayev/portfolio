@@ -72,7 +72,7 @@ const HomeP = () => {
             <div className="container">
                 <div className={styles.services}>
                     <div className={styles['services-info']}>
-                        <Slide direction="left" triggerOnce delay={400}>
+                        <Slide direction="left" triggerOnce delay={200}>
                         <div className={styles['services-info-item']}>
                             <div className={styles['services-info-item-logo']}>
                                 <IoCodeSlashOutline />
@@ -83,7 +83,7 @@ const HomeP = () => {
                             </div>
                         </div>
                         </Slide>
-                        <Slide direction="left" triggerOnce delay={500}>
+                        <Slide direction="left" triggerOnce delay={300}>
                         <div className={styles['services-info-item']}>
                             <div className={styles['services-info-item-logo']}>
                                 <LiaLaptopCodeSolid />
@@ -94,7 +94,7 @@ const HomeP = () => {
                             </div>
                         </div>
                         </Slide>
-                        <Slide direction="left" triggerOnce delay={600}>
+                        <Slide direction="left" triggerOnce delay={400}>
                         <div className={styles['services-info-item']}>
                             <div className={styles['services-info-item-logo']}>
                                 <TbDeviceMobileCode />
@@ -107,13 +107,13 @@ const HomeP = () => {
                         </Slide>
                     </div>
                     <div className={styles['services-main']}>
-                        <Slide direction="right" triggerOnce delay={400}>
+                        <Slide direction="right" triggerOnce delay={200}>
                         <h2>My Services</h2>
                         </Slide>
-                        <Slide direction="right" triggerOnce delay={500}>
+                        <Slide direction="right" triggerOnce delay={300}>
                             <p>As a frontend developer, I offer a range of services aimed at creating visually appealing, user-friendly, and responsive web experiences.</p>
                         </Slide>
-                        <Slide direction="right" triggerOnce delay={600}>
+                        <Slide direction="right" triggerOnce delay={400}>
                         <div className={styles['services-main-stats']}>
                             <div>
                                 <CountUp end={6} duration={3} delay={2}/>+
