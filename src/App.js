@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/index'
 import HomeP from './pages/Home/HomeP';
 import ProjectsP from './pages/Projects/ProjectsP';
 import Wrapper from './components/shared/Wrapper'
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
     <Wrapper />
       <Routes>
         <Route element={<Layout />}>
@@ -13,7 +13,7 @@ function App() {
           <Route path='projects' element={<ProjectsP />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

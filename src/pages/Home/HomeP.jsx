@@ -59,7 +59,7 @@ const HomeP = () => {
                     <p>Specializing in UI design, responsive web design, and visual development. Passionate about delivering excellence in frontend development.</p>
                     <div className={styles['about-btns']}>
                         <button><NavLink to={'https://t.me/notjustdev'} target={"_blank"}>Hire Me</NavLink></button>
-                        <button><a href={require('../../assets/cv/CV.pdf')} download='My CV'>Download CV <span><GoDownload /></span></a></button>
+                        <button><a href={require('../../assets/cv/Elbek_Resume.pdf')} download='My CV'>Download CV <span><GoDownload /></span></a></button>
                     </div>
                     </Slide>
                 </div>
